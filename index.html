@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>QR Code Generator</h1>
+    <form>
+      <h2>Link QR Code</h2>
+      <input type="text" id="link-input" placeholder="Enter link URL" required>
+      <button type="button" id="link-btn">Generate QR Code</button>
+
+      <h2>Wifi QR Code</h2>
+      <input type="text" id="ssid-input" placeholder="Enter SSID" required>
+      <input type="password" id="password-input" placeholder="Enter password" required>
+      <select id="encryption-type" required>
+        <option value="">Select encryption type</option>
+        <option value="WPA">WPA</option>
+        <option value="WEP">WEP</option>
+      </select>
+      <button type="button" id="wifi-btn">Generate QR Code</button>
+
+      <h2>vCard QR Code</h2>
+      <input type="text" id="name-input" placeholder="Enter name" required>
+      <input type="text" id="phone-input" placeholder="Enter phone number" required>
+      <input type="email" id="email-input" placeholder="Enter email" required>
+      <input type="text" id="company-input" placeholder="Enter company" required>
+      <button type="button" id="vcard-btn">Generate QR Code</button>
+    </form>
+    <div class="qr-codes">
+      <div class="link-qr-code qr-code">
+        <h3>Link QR Code:</h3>
+        <canvas id="link-canvas"></canvas>
+        <a href="#" download="link-qr-code.png" id="link-download-btn">Download</a>
+      </div>
+      <div class="wifi-qr-code qr-code">
+        <h3>Wifi QR Code:</h3>
+        <canvas id="wifi-canvas"></canvas>
+        <a href="#" download="wifi-qr-code.png" id="wifi-download-btn">Download</a>
+      </div>
+      <div class="vcard-qr-code qr-code">
+        <h3>vCard QR Code:</h3>
+        <canvas id="vcard-canvas"></canvas>
+        <a href="#" download="vcard-qr-code.png" id="vcard-download-btn">Download</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
